@@ -49,6 +49,21 @@ const login = async (req, res) => {
 
     const { email, password } = req.body;
 
+    // Default admin login
+    if (email === 'admin@kasmetics.com' && password === 'Admin@123') {
+      const token = generateToken('admin_default');
+      return res.json({
+        message: 'Admin login successful',
+        token,
+        user: {
+          id: 'admin_default',
+          name: 'Admin User',
+          email: 'admin@kasmetics.com',
+          role: 'admin'
+        }
+      });
+    }
+
     const user = await User.findOne({ email });
     if (!user) {
       return res.status(400).json({ message: 'Invalid credentials' });
