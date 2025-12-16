@@ -22,7 +22,13 @@ app.get('/api/health', (req, res) => {
 });
 
 // MongoDB connection
-mongoose.connect(process.env.MONGODB_URI)
+const mongoUri = process.env.MONGODB_URI || process.env.DATABASE_URL;
+if (!mongoUri) {
+  console.error('MongoDB URI not found. Please set MONGODB_URI environment variable.');
+  process.exit(1);
+}
+
+mongoose.connect(mongoUri)
   .then(() => console.log('Connected to MongoDB'))
   .catch((error) => console.error('MongoDB connection error:', error));
 
