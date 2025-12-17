@@ -16,6 +16,19 @@ app.use(express.json());
 app.use('/api/auth', authRoutes);
 app.use('/api/admin', adminRoutes);
 
+// Root route
+app.get('/', (req, res) => {
+  res.json({ 
+    message: 'Kasmetics Backend API', 
+    status: 'Running',
+    endpoints: {
+      auth: '/api/auth',
+      admin: '/api/admin',
+      health: '/api/health'
+    }
+  });
+});
+
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ message: 'Server is running', status: 'OK' });
