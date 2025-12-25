@@ -1,0 +1,264 @@
+/* Login Page Layout */
+.login-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #faf7f7 0%, #f0f0f0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  position: relative;
+}
+
+.login-container {
+  width: 100%;
+  max-width: 460px;
+  z-index: 10;
+}
+
+/* Login Card */
+.login-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Header Section */
+.login-header {
+  background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+  color: white;
+  padding: 2rem 2.5rem 1.8rem;
+  text-align: center;
+  position: relative;
+}
+
+.brand-logo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  opacity: 0.9;
+  margin-bottom: 0.8rem;
+}
+
+.login-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.login-subtitle {
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Body Section */
+.login-body {
+  padding: 2.5rem 2.5rem 2rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Form Elements */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.3px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border: 2px solid #e8e8e8;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  background-color: #fafafa;
+  color: #333;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #e91e63;
+  background-color: white;
+  box-shadow: 0 0 0 3px rgba(233, 30, 99, 0.08);
+}
+
+.form-input::placeholder {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.form-input.error {
+  border-color: #e74c3c;
+  background-color: #fef5f5;
+}
+
+.error-text {
+  color: #e74c3c;
+  font-size: 0.75rem;
+  margin-top: 0.3rem;
+  font-weight: 500;
+}
+
+/* Submit Error */
+.submit-error {
+  background: linear-gradient(135deg, #fef5f5, #fdf2f2);
+  border: 1px solid #e74c3c;
+  color: #c0392b;
+  padding: 0.8rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, #e91e63, #f06292);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #c2185b, #e91e63);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(233, 30, 99, 0.3);
+}
+
+.login-btn:active {
+  transform: translateY(0);
+}
+
+.login-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Footer Section */
+.login-footer {
+  text-align: center;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.toggle-text {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #e91e63;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  color: #c2185b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-page {
+    padding: 1rem 0.8rem;
+  }
+  
+  .login-container {
+    max-width: 100%;
+  }
+  
+  .login-header {
+    padding: 1.8rem 2rem 1.5rem;
+  }
+  
+  .login-title {
+    font-size: 1.4rem;
+  }
+  
+  .login-subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .login-body {
+    padding: 2rem 2rem 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    padding: 0.5rem;
+  }
+  
+  .login-header {
+    padding: 1.5rem 1.5rem 1.2rem;
+  }
+  
+  .login-title {
+    font-size: 1.3rem;
+  }
+  
+  .brand-logo {
+    font-size: 1rem;
+  }
+  
+  .login-body {
+    padding: 1.8rem 1.5rem 1.5rem;
+  }
+  
+  .form-input {
+    padding: 0.8rem 0.9rem;
+    font-size: 0.9rem;
+  }
+  
+  .login-btn {
+    padding: 0.9rem;
+    font-size: 0.95rem;
+  }
+}
+
+.admin-toggle {
+  color: #ff5722 !important;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.admin-toggle:hover {
+  color: #d84315 !important;
+}
+
+/* Hide footer on login page */
