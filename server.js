@@ -16,6 +16,7 @@ app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
 
+
 // Security middleware
 app.use(helmet());
 app.use(rateLimit({
@@ -66,8 +67,4 @@ app.use((err, req, res, next) => {
 // 404 handler
 app.use('*', (req, res) => {
   res.status(404).json({ message: 'Route not found' });
-});
-
-app.listen(PORT, () => {
-  console.log("Server running");
 });
