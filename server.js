@@ -11,7 +11,10 @@ const adminRoutes = require('./routes/admin');
 const contactRoutes = require('./routes/contact');
 
 const app = express();
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 
 // Security middleware
 app.use(helmet());
@@ -66,5 +69,5 @@ app.use('*', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
+  console.log("Server running");
 });
