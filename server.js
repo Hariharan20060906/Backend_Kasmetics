@@ -22,12 +22,7 @@ app.use(rateLimit({
 
 // CORS configuration
 app.use(cors({
-  origin: [
-    'https://kasmetics.netlify.app',
-    'https://your-actual-netlify-domain.netlify.app', // Replace with your actual Netlify URL
-    'http://localhost:5173',
-    'http://localhost:3000'
-  ],
+  origin: "*",
   credentials: true
 }));
 
@@ -52,6 +47,11 @@ app.use('/contact', contactRoutes);
 // Health check
 app.get('/', (req, res) => {
   res.json({ message: 'Kasmetics API is running!' });
+});
+
+// Test endpoint
+app.get('/test', (req, res) => {
+  res.json({ message: 'Backend is working!', timestamp: new Date().toISOString() });
 });
 
 // Error handling middleware
